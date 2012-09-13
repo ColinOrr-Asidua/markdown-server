@@ -10,7 +10,7 @@ Getting Started
 3. Open **MarkdownServer.sln** in Visual Studio
 4. Hit **Ctrl-F5** to launch the Markdown server
 
-To add extra content, simply place your Markdown files (\*.md) in the *App_Data* folder.  Visit the [features](markdown-server/blob/master/MarkdownServer/App_Data/features.md) section to find out what's new and what's next.
+To add extra content, simply place your Markdown files (\*.md) in the *App_Data* folder.  Visit the [features](markdown-server/blob/master/MarkdownServer/App_Data/02-Features.md) section to find out what's new and what's next.
 
 [1]: http://www.asp.net/mvc/mvc4
 [2]: http://daringfireball.net/projects/markdown
