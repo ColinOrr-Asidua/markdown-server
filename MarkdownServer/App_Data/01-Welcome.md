@@ -3,7 +3,7 @@
 
 This is a simple [ASP.NET MVC][1] application that serves up [Markdown][2] (powered by [MarkdownSharp][3]).  To add extra content, simply place your Markdown files (\*.md) in the *App_Data* folder.
 
-Visit the [features](features.md) section to find out what's new and what's next.
+Visit the [features](02-Features.md) section to find out what's new and what's next.
 
 Markdown
 --------

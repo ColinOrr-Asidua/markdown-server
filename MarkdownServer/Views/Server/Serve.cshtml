@@ -1,1 +1,21 @@
-﻿@Html.Raw(Model)
+﻿@model MarkdownServer.Models.Document
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<header class="navbar">        
+    <nav class="navbar-inner">
+        <ul class="nav">
+            <li class="brand">Markdown</li>
+            @foreach(var link in Model.Navigation)
+            {
+                <li class="@(link.Key == Model.Path ? "active" : "passive")"><a href="@link.Key">@link.Value</a></li>
+            }
+        </ul>
+    </nav>
+</header>
+
+<div class="container-fluid">
+    @Html.Raw(Model.Html)
+</div>
