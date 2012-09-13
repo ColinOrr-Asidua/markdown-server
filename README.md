@@ -1,4 +1,4 @@
 markdown-server
 ===============
 
-A Markdown server based on ASP.NET MVC 4
+A [Markdown](http://daringfireball.net/projects/markdown) server based on [ASP.NET MVC 4](www.asp.net/mvc/mvc4)
