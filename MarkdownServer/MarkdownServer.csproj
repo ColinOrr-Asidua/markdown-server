@@ -109,6 +109,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Branding.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Branding.settings</DependentUpon>
+    </Compile>
+    <Content Include="Branding\favicon.ico" />
     <Content Include="Content\application.css" />
     <Compile Include="Controllers\ServerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -130,6 +136,11 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Properties\Branding.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Branding.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Branding\branding.config" />
     <None Include="Scripts\jquery-1.8.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.1.js" />
     <Content Include="Scripts\jquery-1.8.1.min.js" />

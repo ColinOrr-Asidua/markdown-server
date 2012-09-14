@@ -1,7 +1,7 @@
-﻿@model MarkdownServer.Models.Document
+﻿@model Document
 
 @{
-    ViewBag.Title = Model.Title;
+    ViewBag.Title = Branding.Default.SiteTitle + ": " + Model.Title;
 }
 
 <!-- Header -->
@@ -27,7 +27,7 @@
                 </ul>
             </div>
 
-            <h1 class="brand">Markdown</h1>
+            <h1 class="brand">@Branding.Default.SiteTitle</h1>
 
             <!-- Navigation -->
             <nav class="nav-collapse collapse">

@@ -8,13 +8,13 @@ Complete
 + Navigation
 + Mobile layout
 + Document outlines
++ Customizable branding
 
 --------------------------------------------------
 
 Backlog
 -------
 
-+ Customizable branding
 + Relative images and other assets
 + Gherkin server
 + Installer
