@@ -9,25 +9,36 @@
     <div class="navbar-inner">
         <div class="container">
 
-            <!-- Expand Navigation Button -->
+            <!-- Expand / Collapse Navigation -->
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-          
+
+            <!-- Document Outline -->
+            <div class="btn-group pull-right">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    Document Outline
+                    <span class="caret" />
+                </a>
+                <ul class="dropdown-menu">
+                    <li data-outline="body" />
+                </ul>
+            </div>
+
             <div class="brand">Markdown</div>
-          
+
             <!-- Navigation -->
-            <nav class="nav-collapse collapse">
+            <div class="nav-collapse collapse">
                 <ul class="nav">
-                    @foreach(var link in Model.Navigation)
+                    @foreach (var link in Model.Navigation)
                     {
                         <li class="@(link.Key == Model.Path ? "active" : "passive")"><a href="@link.Key">@link.Value</a></li>
                     }
                 </ul>
-            </nav>
-          
+            </div>
+
         </div>
     </div>
 </header>
