@@ -23,27 +23,27 @@
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li data-outline="body" />
+                    <li data-outline=".content" />
                 </ul>
             </div>
 
-            <div class="brand">Markdown</div>
+            <h1 class="brand">Markdown</h1>
 
             <!-- Navigation -->
-            <div class="nav-collapse collapse">
+            <nav class="nav-collapse collapse">
                 <ul class="nav">
                     @foreach (var link in Model.Navigation)
                     {
                         <li class="@(link.Key == Model.Path ? "active" : "passive")"><a href="@link.Key">@link.Value</a></li>
                     }
                 </ul>
-            </div>
+            </nav>
 
         </div>
     </div>
 </header>
 
 <!-- Content -->
-<div class="container">
+<section class="content container">
     @Html.Raw(Model.Html)
-</div>
+</section>
