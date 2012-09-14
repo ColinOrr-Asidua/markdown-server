@@ -5,13 +5,13 @@
 
 + Markdown server
 + Navigation
++ Mobile layout
 
 --------------------------------------------------
 
 **Backlog**
 
 + Document outlines
-+ Mobile layout
 + Customizable branding
 + Relative images and other assets
 + Gherkin server
