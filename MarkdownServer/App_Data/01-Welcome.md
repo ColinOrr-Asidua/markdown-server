@@ -2,7 +2,7 @@
 ==============================
 
 This is a simple [ASP.NET MVC][1] application that serves up [Markdown][2] (powered 
-by [MarkdownSharp][3]).  Visit the [features](02-Features.md) section to find out 
+by [MarkdownDeep][3]).  Visit the [features](02-Features.md) section to find out 
 what's new and what's next.
 
 Markdown
@@ -73,7 +73,7 @@ navigation bar and website icon.
 
 [1]: http://www.asp.net/mvc/mvc4
 [2]: http://daringfireball.net/projects/markdown
-[3]: http://code.google.com/p/markdownsharp
+[3]: http://www.toptensoftware.com/markdowndeep
 [4]: http://daringfireball.net/projects/markdown/syntax
 [5]: http://github.github.com/github-flavored-markdown
 [6]: http://stackoverflow.com/editing-help

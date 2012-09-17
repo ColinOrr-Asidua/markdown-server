@@ -1,5 +1,5 @@
-﻿using MarkdownServer.Models;
-using MarkdownSharp;
+﻿using MarkdownDeep;
+using MarkdownServer.Models;
 using Microsoft.Web.Administration;
 using System.IO;
 using System.Linq;
@@ -62,10 +62,14 @@ namespace MarkdownServer.Controllers
         /// </summary>
         private static string transformMarkdown(string mappedPath)
         {
-            var transformer = new Markdown();
+            var transformer = new Markdown
+            {
+                AutoHeadingIDs = true,
+                ExtraMode      = true,
+            };
+
             var markdown = System.IO.File.ReadAllText(mappedPath);
-            var html = transformer.Transform(markdown);
-            return html;
+            return transformer.Transform(markdown);
         }
 
         /// <summary>
