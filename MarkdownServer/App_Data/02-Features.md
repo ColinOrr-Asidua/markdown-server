@@ -9,13 +9,13 @@ Complete
 + Mobile layout
 + Document outlines
 + Customizable branding
++ Relative images and other assets
 
 --------------------------------------------------
 
 Backlog
 -------
 
-+ Relative images and other assets
 + Gherkin server
 + Installer
 + PDF & Word conversion
