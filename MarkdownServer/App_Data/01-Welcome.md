@@ -28,7 +28,8 @@ or formatting instructions:
     the aid of their country. This is just a regular 
     paragraph with emphasis on the text "good men".
 
-See the [Markdown Website][4] for a full details about the syntax.
+See the [Markdown Website][4] for a full details about the syntax.  The server also
+supports [Markdown Extra][8] syntax.
 
 We love Markdown, so does [GitHub][5] and [Stack Overflow][6].  We intend to use a 
 lot more of it in the future.
@@ -77,4 +78,5 @@ navigation bar and website icon.
 [4]: http://daringfireball.net/projects/markdown/syntax
 [5]: http://github.github.com/github-flavored-markdown
 [6]: http://stackoverflow.com/editing-help
-[7]: http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm/
+[7]: http://coding.smashingmagazine.com/2011/08/16/html5-and-the-document-outlining-algorithm
+[8]: http://michelf.ca/projects/php-markdown/extra
