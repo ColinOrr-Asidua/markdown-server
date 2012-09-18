@@ -10,3 +10,6 @@
     });
 
 });
+
+//  Enable syntax highlighting
+hljs.initHighlightingOnLoad();

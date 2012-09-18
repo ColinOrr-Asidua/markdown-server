@@ -130,12 +130,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\images\glyphicons-halflings.png" />
+    <Content Include="Content\highlight.js\vs.css" />
+    <Content Include="Content\highlight.js\vs.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -145,6 +147,7 @@
     </Content>
     <Content Include="Branding\branding.config" />
     <None Include="Scripts\jquery-1.8.1.intellisense.js" />
+    <Content Include="Scripts\highlight.pack.js" />
     <Content Include="Scripts\jquery-1.8.1.js" />
     <Content Include="Scripts\jquery-1.8.1.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

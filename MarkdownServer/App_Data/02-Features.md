@@ -10,6 +10,7 @@ Complete
 + Document outlines
 + Customizable branding
 + Relative images and other assets
++ Syntax highlighting
 
 --------------------------------------------------
 
