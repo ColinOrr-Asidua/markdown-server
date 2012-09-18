@@ -15,7 +15,7 @@ namespace MarkdownServer.Controllers
         /// <summary>
         /// Defines the extensions that are supported by the server.
         /// </summary>
-        private readonly string[] EXTENSIONS = new [] { "md" };
+        private readonly string[] EXTENSIONS = new [] { "md", "feature" };
 
         #endregion
 
@@ -39,7 +39,11 @@ namespace MarkdownServer.Controllers
                 };
 
                 //  Generate the HTML
-                document.Html = transformMarkdown(mappedPath);
+                switch (extension)
+                {
+                    case "md" : document.Html = transformMarkdown(mappedPath);          break;
+                    default   : document.Html = System.IO.File.ReadAllText(mappedPath); break;
+                }
 
                 return View(extension, document);
             }
@@ -80,16 +84,20 @@ namespace MarkdownServer.Controllers
         /// <summary>
         /// Builds the navigation links.
         /// </summary>
-        private static IDictionary<string, string> buildNavigation(string directory)
+        private IDictionary<string, string> buildNavigation(string directory)
         {
             var navigation = new Dictionary<string, string>();
 
+            //  Find the top-level files to be used as links
+            var index = directory.Length + 1;  //  Used to strip off the root directory
+            var links = from file in Directory.GetFiles(directory)
+                        where EXTENSIONS.Contains(Path.GetExtension(file).TrimStart('.'))
+                        select file.Substring(index, file.Length - index);
+
             //  Add the navigation links
-            var directoryIndex = directory.Length + 1;  //  Used to strip off the root directory
-            foreach (var link in Directory.GetFiles(directory, "*.md"))
+            foreach (var link in links)
             {
-                var relativeLink = link.Substring(directoryIndex, link.Length - directoryIndex);
-                navigation.Add(relativeLink, retrieveTitle(relativeLink));
+                navigation.Add(link, retrieveTitle(link));
             }
 
             return navigation;

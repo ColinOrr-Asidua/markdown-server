@@ -11,12 +11,12 @@ Complete
 + Customizable branding
 + Relative images and other assets
 + Syntax highlighting
++ Gherkin server
 
 --------------------------------------------------
 
 Backlog
 -------
 
-+ Gherkin server
 + Installer
 + PDF & Word conversion
