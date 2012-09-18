@@ -117,6 +117,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Branding.settings</DependentUpon>
     </Compile>
+    <Content Include="Branding\branding.css" />
+    <Content Include="Branding\branding.js" />
     <Content Include="Branding\favicon.ico" />
     <Content Include="Content\application.css" />
     <Compile Include="Controllers\ServerController.cs" />

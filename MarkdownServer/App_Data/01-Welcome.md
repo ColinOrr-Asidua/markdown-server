@@ -72,6 +72,9 @@ To change the name of the server, edit the *SiteTitle* setting in
 You can also provide an alternate **Branding/favicon.ico** which will appear in the
 navigation bar and website icon.
 
+Custom CSS and JavaScript can be placed in **Branding/branding.css** and 
+**Branding/branding.js** retrospectively.
+
 [1]: http://www.asp.net/mvc/mvc4
 [2]: http://daringfireball.net/projects/markdown
 [3]: http://www.toptensoftware.com/markdowndeep

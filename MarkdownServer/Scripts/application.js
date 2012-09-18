@@ -1,4 +1,9 @@
 ﻿$(function () {
+    
+    //  Enable syntax highlighting
+    $('pre code').each(function (i, e) {
+        hljs.highlightBlock(e)
+    });
 
     //  Unobtrusive JavaScript for elements with data-outline='xxx'
     //  where 'xxx' is the target element to be outlined
@@ -10,6 +15,3 @@
     });
 
 });
-
-//  Enable syntax highlighting
-hljs.initHighlightingOnLoad();
