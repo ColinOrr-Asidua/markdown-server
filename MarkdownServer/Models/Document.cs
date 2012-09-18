@@ -8,24 +8,24 @@ namespace MarkdownServer.Models
     public class Document
     {
         /// <summary>
-        /// The relative path to the document on the server.
+        /// Gets or sets the relative path to the document on the server.
         /// </summary>
         public string Path { get; set; }
 
         /// <summary>
-        /// The human-friendly title of the document.
+        /// Gets or sets the human-friendly title of the document.
         /// </summary>
         public string Title { get; set; }
 
         /// <summary>
-        /// The HTML of the document to be served.
+        /// Gets or sets the HTML of the document to be served.
         /// </summary>
         public string Html { get; set; }
 
         /// <summary>
-        /// A list of links to other available documents, indexed by their relative paths.
+        /// Gets or sets a list of links to other available documents, indexed by their relative paths.
         /// </summary>
-        public IDictionary<string,string> Navigation { get; private set; }
+        public IDictionary<string,string> Navigation { get; set; }
 
         /// <summary>
         /// Default constructor.

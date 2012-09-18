@@ -161,12 +161,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Server\md.cshtml" />
+    <Content Include="Views\Server\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Server\Serve.cshtml" />
+    <Content Include="Views\Server\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\01-Welcome.md" />

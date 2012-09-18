@@ -1,6 +1,8 @@
 ﻿@model Document
 
 @{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Branding.Default.SiteTitle + ": " + Model.Title;
 }
 
@@ -45,5 +47,5 @@
 
 <!-- Content -->
 <section class="content container">
-    @Html.Raw(Model.Html)
+    @RenderBody()
 </section>

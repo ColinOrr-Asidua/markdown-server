@@ -1,6 +1,7 @@
 ﻿using MarkdownDeep;
 using MarkdownServer.Models;
 using Microsoft.Web.Administration;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,33 +11,37 @@ namespace MarkdownServer.Controllers
 {
     public class ServerController : Controller
     {
+        #region Fields
+        /// <summary>
+        /// Defines the extensions that are supported by the server.
+        /// </summary>
+        private readonly string[] EXTENSIONS = new [] { "md" };
+
+        #endregion
+
         //
         // GET: /path_to_markdown.md
 
         public ActionResult Serve(string path)
         {
-            var directory = Server.MapPath("~/App_Data");
+            var directory  = Server.MapPath("~/App_Data");
             var mappedPath = Path.Combine(directory, path);
+            var extension  = Path.GetExtension(path).TrimStart('.');
 
-            if (path.EndsWith(".md"))
+            if (EXTENSIONS.Contains(extension))
             {
-                //  Load the document
+                //  Load the document metadata
                 var document = new Document
                 {
-                    Path  = path,
-                    Title = retrieveTitle(path),
-                    Html  = transformMarkdown(mappedPath),
+                    Path       = path,
+                    Title      = retrieveTitle(path),
+                    Navigation = buildNavigation(directory),
                 };
 
-                //  Add the navigation links
-                var directoryIndex = directory.Length + 1;  //  Used to strip off the root directory
-                foreach (var link in Directory.GetFiles(directory, "*.md"))
-                {
-                    var relativeLink = link.Substring(directoryIndex, link.Length - directoryIndex);
-                    document.Navigation.Add(relativeLink, retrieveTitle(relativeLink));
-                }
+                //  Generate the HTML
+                document.Html = transformMarkdown(mappedPath);
 
-                return View(document);
+                return View(extension, document);
             }
             else
             {
@@ -70,6 +75,24 @@ namespace MarkdownServer.Controllers
 
             var markdown = System.IO.File.ReadAllText(mappedPath);
             return transformer.Transform(markdown);
+        }
+        
+        /// <summary>
+        /// Builds the navigation links.
+        /// </summary>
+        private static IDictionary<string, string> buildNavigation(string directory)
+        {
+            var navigation = new Dictionary<string, string>();
+
+            //  Add the navigation links
+            var directoryIndex = directory.Length + 1;  //  Used to strip off the root directory
+            foreach (var link in Directory.GetFiles(directory, "*.md"))
+            {
+                var relativeLink = link.Substring(directoryIndex, link.Length - directoryIndex);
+                navigation.Add(relativeLink, retrieveTitle(relativeLink));
+            }
+
+            return navigation;
         }
 
         /// <summary>
