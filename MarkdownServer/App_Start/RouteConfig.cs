@@ -16,7 +16,7 @@ namespace MarkdownServer
             routes.MapRoute(
                 name: "Default",
                 url: "{*path}",
-                defaults: new { controller = "Server", action = "Serve", path = "01-Welcome.md" }
+                defaults: new { controller = "Server", action = "Serve" }
             );
         }
     }

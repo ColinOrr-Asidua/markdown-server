@@ -24,7 +24,7 @@ namespace MarkdownServer.Controllers
 
         public ActionResult Serve(string path)
         {
-            var directory  = Server.MapPath("~/App_Data");
+            if (path == null) path = links.First();
             var mappedPath = Path.Combine(directory, path);
             var extension  = Path.GetExtension(path).TrimStart('.');
 
@@ -35,7 +35,7 @@ namespace MarkdownServer.Controllers
                 {
                     Path       = path,
                     Title      = retrieveTitle(path),
-                    Navigation = buildNavigation(directory),
+                    Navigation = buildNavigation(),
                 };
 
                 //  Generate the HTML
@@ -54,6 +54,30 @@ namespace MarkdownServer.Controllers
                 return File(mappedPath, mimeType);
             }
         }
+
+        #region Helper Properties
+        /// <summary>
+        /// Gets the root directory of the content.
+        /// </summary>
+        private string directory
+        {
+            get { return Server.MapPath("~/App_Data"); }
+        }
+
+        /// <summary>
+        /// Gets the top-level files to be used as links.
+        /// </summary>
+        private IEnumerable<string> links
+        {
+            get
+            {
+                return from file in Directory.GetFiles(directory)
+                       where EXTENSIONS.Contains(Path.GetExtension(file).TrimStart('.'))
+                       select Path.GetFileName(file);
+            }
+        }
+        
+        #endregion
 
         #region Helper Methods
         /// <summary>
@@ -84,15 +108,9 @@ namespace MarkdownServer.Controllers
         /// <summary>
         /// Builds the navigation links.
         /// </summary>
-        private IDictionary<string, string> buildNavigation(string directory)
+        private IDictionary<string, string> buildNavigation()
         {
             var navigation = new Dictionary<string, string>();
-
-            //  Find the top-level files to be used as links
-            var index = directory.Length + 1;  //  Used to strip off the root directory
-            var links = from file in Directory.GetFiles(directory)
-                        where EXTENSIONS.Contains(Path.GetExtension(file).TrimStart('.'))
-                        select file.Substring(index, file.Length - index);
 
             //  Add the navigation links
             foreach (var link in links)
