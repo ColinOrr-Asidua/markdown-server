@@ -149,6 +149,7 @@
     </Content>
     <Content Include="Branding\branding.config" />
     <Content Include="App_Data\03-Gherkin.feature" />
+    <None Include="Properties\PublishProfiles\Build.pubxml" />
     <None Include="Scripts\jquery-1.8.1.intellisense.js" />
     <Content Include="Scripts\highlight.pack.js" />
     <Content Include="Scripts\jquery-1.8.1.js" />
