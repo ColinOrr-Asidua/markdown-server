@@ -1,7 +1,6 @@
 ﻿@model Document
 
-@{
-    
+@{    
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Branding.Default.SiteTitle + ": " + Model.Title;
 }
@@ -36,7 +35,7 @@
                 <ul class="nav">
                     @foreach (var link in Model.Navigation)
                     {
-                        <li class="@(link.Key == Model.Path ? "active" : "passive")"><a href="@link.Key">@link.Value</a></li>
+                        <li class="@(link.Key == Model.Path ? "active" : "passive")"><a href="~/@link.Key">@link.Value</a></li>
                     }
                 </ul>
             </nav>
