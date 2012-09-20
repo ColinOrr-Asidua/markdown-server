@@ -19,7 +19,7 @@ Then run the following commands:
     cd markdown-server
     rake
 
-**Note**: the application can also be build and run from Visual Studio (MarkdownServer.sln).
+**Note**: the application can also be built and run from Visual Studio (*MarkdownServer.sln*).
 
 To add extra content, simply place your Markdown files (\*.md) in the *App_Data* folder.  Visit the [features](markdown-server/blob/master/MarkdownServer/App_Data/02-Features.md) section to find out what's new and what's next.
 
