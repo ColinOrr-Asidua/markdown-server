@@ -1,6 +1,5 @@
 ﻿using MarkdownDeep;
 using MarkdownServer.Models;
-using Microsoft.Web.Administration;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -126,20 +125,8 @@ namespace MarkdownServer.Controllers
         /// </summary>
         private static string lookupMimeType(string extension)
         {
-            using (var serverManager = new ServerManager())
-            {
-                var mimeType = "application/octet-stream";
-
-                //  Lookup IIS for the MIME type
-                var mimeMap = serverManager
-                    .GetApplicationHostConfiguration()
-                    .GetSection("system.webServer/staticContent")
-                    .GetCollection();
-
-                var mapping = mimeMap.FirstOrDefault(a => a["fileExtension"] as string == extension);
-                if (mapping != null) mimeType = (string)mapping["mimeType"];
-                return mimeType;
-            }
+            //  Just use a default MIME type for now
+            return "application/octet-stream";
         }
 
         #endregion
