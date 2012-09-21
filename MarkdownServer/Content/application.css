@@ -1,7 +1,44 @@
-﻿h1.brand {
+﻿h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+h1.brand {
+    font-size: 36px;
     margin: 0;
     line-height: 1;
     padding-left: 40px !important;
     background: left center no-repeat url(../Branding/favicon.ico);
     background-size: 40px 40px;
+}
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.dropdown-menu ol a {
+    padding-left: 2px;
 }
