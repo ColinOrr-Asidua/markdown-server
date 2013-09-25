@@ -25,7 +25,7 @@ Then run the following commands:
 (*MarkdownServer.sln*).
 
 To add extra content, simply place your Markdown files (\*.md) in the *App_Data* 
-folder.  Visit the [features](markdown-server/blob/master/MarkdownServer/App_Data/02-Features.md) 
+folder.  Visit the [features](https://github.com/ColinOrr-Asidua/markdown-server/blob/master/MarkdownServer/App_Data/02-Features.md)
 section to find out what's new and what's next.
 
 License
