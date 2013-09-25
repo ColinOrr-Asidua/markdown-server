@@ -6,8 +6,7 @@ by [MarkdownSharp][3]).
 
 Getting Started
 ---------------
-Install [Git][4], [Iron Ruby][5] and **Visual Studio 2012** on your machine (a 
-development VM is available on the Asidua VM library).
+Install [Git][4], [Ruby][5] and **Visual Studio 2012** on your machine.
 
 Then run the following commands:
 
@@ -50,4 +49,4 @@ Copyright (C) 2012  Colin Orr
 [2]: http://daringfireball.net/projects/markdown
 [3]: http://code.google.com/p/markdownsharp
 [4]: https://help.github.com/articles/set-up-git
-[5]: http://www.ironruby.net
+[5]: https://www.ruby-lang.org
