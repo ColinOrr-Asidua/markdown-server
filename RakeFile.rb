@@ -3,8 +3,10 @@ require 'albacore'
 task :default => :build
 
 # Builds the web application into the 'Build' folder
-msbuild :build do |msb|
-	msb.targets :Build
-	msb.properties = { :DeployOnBuild => 'true', :PublishProfile => 'Build' }
-	msb.solution = 'MarkdownServer.sln'
+build :build do |msb|
+	msb.target = "Build"
+	msb.sln    = 'MarkdownServer.sln'
+
+	msb.prop :DeployOnBuild , 'true'
+	msb.prop :PublishProfile, 'Build'
 end
